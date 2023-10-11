@@ -1,4 +1,4 @@
- Predicting Customer Churn with XGBoost and SMOTE
+## Predicting Customer Churn with XGBoost and SMOTE
 
 In this project, I leveraged the power of XGBoost, a robust gradient boosting algorithm, to develop a machine learning model for predicting customer churn. The objective was to proactively identify customers who might churn, enabling targeted retention strategies.
 
