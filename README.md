@@ -1,35 +1,58 @@
-## Predicting Customer Churn with XGBoost and SMOTE
+# Project 1: Predicting Customer Churn with XGBoost and SMOTE
 
-In this project, I leveraged the power of XGBoost, a robust gradient boosting algorithm, to develop a machine learning model for predicting customer churn. The objective was to proactively identify customers who might churn, enabling targeted retention strategies.
+## Overview
+In this project, I applied advanced machine learning techniques to address the challenge of predicting customer churn. The primary goal was to develop a proactive system that could identify customers likely to churn, allowing for the implementation of targeted retention strategies.
 
-## Key Highlights:
+## Exploratory Data Analysis (EDA)
+During the exploratory data analysis phase, I made intriguing observations:
+- More than 90% of the customers experienced churn within 30 months of using the network.
+- Notably, customers with a 2-year contract had a significantly higher churn rate compared to those with a month-to-month contract or a one-year contract.
+- Approximately 80% of customers who had no tech support, device protection, and online security got churned in the first 30 months.
 
-- **Machine Learning Model:**
-  - Implemented and fine-tuned an XGBoost model, known for its effectiveness in handling complex relationships within data.
+## Data Preprocessing
+In the data preprocessing phase, several steps were taken to clean and prepare the data for modeling:
+- **Columns Removed:**
+  - `Count`: Dropped because it's redundant.
+  - `Churn Reason`: Dropped due to a high number of missing values.
+  - `Churn Score`: Not required since this is a classification task.
+  - `Churn Label`: Not needed because we have the churn value.
+  - `CustomerID`: Not needed for this task.
+  - `State`: Removed as it contains redundant values.
+  - `Country`: Removed due to redundant values.
+  - `Lat Long`: Dropped since there is another column called `Latitude`.
+- **Missing Values:**
+  - Rows with missing values were removed.
+- **Column Names:**
+  - Column names with spaces between them were replaced with underscores.
 
-- **Addressing Class Imbalance:**
-  - Recognizing the challenge posed by imbalanced data, I employed the Synthetic Minority Over-sampling Technique (SMOTE). SMOTE helped balance the class distribution, preventing the model from being biased toward the majority class.
-    ![Class Imbalance](./imbal.PNG "example1")
+## Feature Engineering
+In the feature engineering phase:
+- Columns with incorrect datatypes were checked and corrected.
+- Columns with high cardinality were frequency encoded.
+- Columns with low cardinality were converted to dummy variables.
 
-- **Feature Engineering:**
-  - Explored and engineered relevant features to enhance the predictive capabilities of the model. Considered factors such as customer behavior, transaction history, and engagement metrics.
+## Machine Learning Model
+The data was split into train and test sets. An XGBoost classifier was employed to build the predictive model.
 
-- **Model Evaluation and Interpretation:**
-  - Rigorously evaluated the model using industry-standard metrics and techniques. Additionally, delved into model interpretation to understand the factors contributing to predictions.
-    
-  - Confusion matrices for train and test data
-  
-    ![Train accuracy before applying SMOTE](./train_conf_xg.PNG)
-    
-    ![Test accuracy before applying SMOTE](./test_cong_xg.PNG)
- 
-    <br><br> <!-- Adding line breaks for spacing -->
- 
-    ![Train accuracy after applying SMOTE](./train_conf_xg_smote.PNG)
-    
-    ![Test accuracy after applying SMOTE](./test_conf_xg_smote.PNG)
+## Model Performance
+- **Before Addressing Class Imbalance:**
+  - Initial train accuracy: 83%
+  - Initial test accuracy: 79%
+  - Note: There was a class imbalance in the data.
 
-- **Scalability and Deployment Considerations:**
-  - Discussed considerations for scalability and potential deployment strategies, ensuring the model's practicality in real-world scenarios.
+- **After Addressing Class Imbalance with SMOTENN:**
+  - Train accuracy after SMOTENN: 85%
+  - Test accuracy after SMOTENN: 85%
 
-This project not only showcases my proficiency in machine learning and predictive modeling but also underscores my commitment to addressing real-world challenges, such as class imbalance, to deliver robust and actionable solutions.
+These results indicate that addressing class imbalance using SMOTENN led to improved model performance on both the training and test sets.
+
+## Technologies Used
+- Jupyter Notebook
+- Python
+- Excel
+
+## Your Role
+Clearly outline your role in the project, specifying contributions to data preprocessing, feature engineering, model training, and evaluation.
+
+## Results/Outcomes
+Share the results of the project, discussing how well the model performed and any lessons learned throughout the data preprocessing and feature engineering stages.
