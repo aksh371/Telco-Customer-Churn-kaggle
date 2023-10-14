@@ -3,12 +3,6 @@
 ## Overview
 In this project, I applied advanced machine learning techniques to address the challenge of predicting customer churn. The primary goal was to develop a proactive system that could identify customers likely to churn, allowing for the implementation of targeted retention strategies.
 
-## Exploratory Data Analysis (EDA)
-During the exploratory data analysis phase, I made intriguing observations:
-- More than 90% of the customers experienced churn within 30 months of using the network.
-- Notably, customers with a 2-year contract had a significantly higher churn rate compared to those with a month-to-month contract or a one-year contract.
-- Approximately 80% of customers who had no tech support, device protection, and online security got churned in the first 30 months.
-
 ## Data Preprocessing
 In the data preprocessing phase, several steps were taken to clean and prepare the data for modeling:
 - **Columns Removed:**
@@ -24,6 +18,12 @@ In the data preprocessing phase, several steps were taken to clean and prepare t
   - Rows with missing values were removed.
 - **Column Names:**
   - Column names with spaces between them were replaced with underscores.
+ 
+## Exploratory Data Analysis (EDA)
+During the exploratory data analysis phase, I made intriguing observations:
+- More than 90% of the customers experienced churn within 30 months of using the network.
+- Notably, customers with a 2-year contract had a significantly higher churn rate compared to those with a month-to-month contract or a one-year contract.
+- Approximately 80% of customers who had no tech support, device protection, and online security got churned in the first 30 months.
 
 ## Feature Engineering
 In the feature engineering phase:
@@ -42,7 +42,7 @@ The data was split into train and test sets. An XGBoost classifier was employed 
 
 - **After Addressing Class Imbalance with SMOTENN:**
   - Train accuracy after SMOTENN: 85%
-  - Test accuracy after SMOTENN: 85%
+  - Test accuracy after SMOTENN: 86%
 
 These results indicate that addressing class imbalance using SMOTENN led to improved model performance on both the training and test sets.
 
@@ -50,9 +50,3 @@ These results indicate that addressing class imbalance using SMOTENN led to impr
 - Jupyter Notebook
 - Python
 - Excel
-
-## Your Role
-Clearly outline your role in the project, specifying contributions to data preprocessing, feature engineering, model training, and evaluation.
-
-## Results/Outcomes
-Share the results of the project, discussing how well the model performed and any lessons learned throughout the data preprocessing and feature engineering stages.
