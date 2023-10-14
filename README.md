@@ -21,10 +21,21 @@ In the data preprocessing phase, several steps were taken to clean and prepare t
  
 ## Exploratory Data Analysis (EDA)
 During the exploratory data analysis phase, I made intriguing observations:
-- More than 90% of the customers experienced churn within 30 months of using the network.
-- Notably, customers with a 2-year contract had a significantly higher churn rate compared to those with a month-to-month contract or a one-year contract.
-- Approximately 80% of customers who had no tech support, device protection, and online security got churned in the first 30 months.
 
+- More than 90% of the customers experienced churn within 30 months of using the network.
+   ![Class Imbalance](./EDA1.PNG "example1")
+   <br><br> <!-- Adding line breaks for spacing -->
+
+
+- Notably, customers with a 2-year contract had a significantly higher churn rate compared to those with a month-to-month contract or a one-year contract.
+  ![Class Imbalance](./download.png "example1")
+  <br><br> <!-- Adding line breaks for spacing -->
+  
+- Approximately 80% of customers who had no tech support, device protection, and online security got churned in the first 30 months.
+  ![Class Imbalance](./download_2.png "example1")
+  
+  <br><br> <!-- Adding line breaks for spacing -->
+  
 ## Feature Engineering
 In the feature engineering phase:
 - Columns with incorrect datatypes were checked and corrected.
@@ -36,13 +47,28 @@ The data was split into train and test sets. An XGBoost classifier was employed 
 
 ## Model Performance
 - **Before Addressing Class Imbalance:**
-  - Initial train accuracy: 83%
-  - Initial test accuracy: 79%
+  - Initial train accuracy obtained: 83%
+    ![Class Imbalance](./train_conf_xg.PNG "example1")
+
+    <br><br> <!-- Adding line breaks for spacing -->
+
+  - Initial test accuracy obtained: 79%
+    ![Class Imbalance](./test_cong_xg.PNG "example1")
+
+    <br><br> <!-- Adding line breaks for spacing -->
+
   - Note: There was a class imbalance in the data.
+    
+    ![Class Imbalance](./imbal.PNG "example1")
+    
+    <br><br> <!-- Adding line breaks for spacing -->
 
 - **After Addressing Class Imbalance with SMOTENN:**
   - Train accuracy after SMOTENN: 85%
+    ![Class Imbalance](./aftersmotetrain.PNG "example1")
+    
   - Test accuracy after SMOTENN: 86%
+    ![Class Imbalance](./aftersmotetest.PNG "example1")
 
 These results indicate that addressing class imbalance using SMOTENN led to improved model performance on both the training and test sets.
 
