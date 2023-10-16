@@ -63,6 +63,9 @@ The data was split into train and test sets. An XGBoost classifier was employed 
     
     <br><br> <!-- Adding line breaks for spacing -->
 
+  - Class distribution after applying SMOTE.
+    ![Class Imbalance](./Images/piedist.PNG "example1")  
+
 - **After Addressing Class Imbalance with SMOTENN:**
   - Train accuracy after SMOTENN: 85%
     ![Class Imbalance](./Images/aftersmotetrain.PNG "example1")
