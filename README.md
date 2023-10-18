@@ -1,4 +1,4 @@
-# Project 1: Predicting Customer Churn with XGBoost and SMOTE
+Predicting Customer Churn with XGBoost and SMOTE
 
 ## Overview
 In this project, I applied advanced machine learning techniques to address the challenge of predicting customer churn. The primary goal was to develop a proactive system that could identify customers likely to churn, allowing for the implementation of targeted retention strategies.
